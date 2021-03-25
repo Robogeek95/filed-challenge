@@ -1,0 +1,20 @@
+<div class="container">
+  <div *ngFor="let feedback of feedbacks">
+    <div class="quote-area">
+      <!-- quote -->
+      <img src="assets/images/quote.svg" alt="" />
+      <p class="mat-h1">{{ feedback.title }}</p>
+    </div>
+    <p class="mat-h2">
+      {{ feedback.body }}
+    </p>
+
+    <div class="role-area">
+      <img src="" alt="" />
+      <div>
+        <p class="mat-h2">{{ feedback.author }}</p>
+        <p>{{ feedback.role }}</p>
+      </div>
+    </div>
+  </div>
+</div>

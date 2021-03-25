@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  align-items: center;
+  padding: 5%;
+  grid-template-columns: 1fr 1fr;
+
+  .highlighted {
+    color: #38CCF5
+  }
+
+  .benefits-list {
+    font-size: 20px;
+
+    .list {
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 20px;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+  }
+}

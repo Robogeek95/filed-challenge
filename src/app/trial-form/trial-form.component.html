@@ -1,0 +1,115 @@
+<div class="trial-form">
+  <form class="form-body" [formGroup]="myForm" (ngSubmit)="submitHandler()">
+    <div *ngIf="step === 1; else step2Template" class="step1" #step1Template>
+      <div class="form-heading">
+        <p class="heading">Let's Start</p>
+        <p class="title">
+          Fill out the form and we'll get in touch to get your trial set up.
+        </p>
+      </div>
+
+      <div>
+        <div class="input-item">
+          <h3 class="form-label">Do you want to make ads that convert?</h3>
+          <mat-radio-group [formControl]="agreed" class="margin-left">
+            <mat-radio-button class="example-radio-button" value="true">
+              Yes
+            </mat-radio-button>
+
+            <mat-radio-button class="example-radio-button" value="false">
+              No
+            </mat-radio-button>
+            <!-- <mat-error *ngIf="selected.hasError('required')"
+              >You must make a selection</mat-error
+            >
+            <mat-error
+              *ngIf="
+                selected.hasError('pattern') && !selected.hasError('required')
+              "
+            >
+              Your selection is invalid
+            </mat-error> -->
+          </mat-radio-group>
+        </div>
+
+        <div class="input-item">
+          <h3 class="form-label">What's your monthly ad budget?</h3>
+
+          <mat-form-field class="full-width">
+            <mat-select formControlName="budget" placeholder="Select">
+              <mat-option>Clear</mat-option>
+              <mat-option value="valid">Valid option</mat-option>
+              <mat-option value="invalid">Invalid option</mat-option>
+            </mat-select>
+            <!-- <mat-error *ngIf="selected.hasError('required')"
+            >You must make a selection</mat-error
+          >
+          <mat-error
+            *ngIf="
+              selected.hasError('pattern') && !selected.hasError('required')
+            "
+          >
+            Your selection is invalid
+          </mat-error> -->
+          </mat-form-field>
+        </div>
+      </div>
+
+      <button
+        aria-label="get started"
+        [disabled]="myForm.invalid"
+        class="submitButton"
+        mat-raised-button
+        color="primary"
+        (click)="switchStep(2)"
+      >
+        Get Started
+      </button>
+    </div>
+
+    <ng-template class="step1" #step2Template>
+      <div class="form-heading">
+        <p class="heading">We’ll be in touch to get your trial set up.</p>
+        <p class="title">Fill Out Form</p>
+      </div>
+
+      <div class="name-inputs">
+        <mat-form-field class="example-full-width">
+          <mat-label>First Name*</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Last Name*</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field>
+        <mat-label>Work Email</mat-label>
+        <input matInput placeholder="Input placeholder" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Monthly Advertising Budget *</mat-label>
+        <input matInput placeholder="Input placeholder" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="Input placeholder" />
+      </mat-form-field>
+
+      <button
+        aria-label="get started"
+        [disabled]="myForm.invalid"
+        class="submitButton"
+        mat-raised-button
+        color="primary"
+      >
+        Get Started
+      </button>
+    </ng-template>
+
+    <div *ngIf="success">Yay! We received your submission</div>
+  </form>
+</div>

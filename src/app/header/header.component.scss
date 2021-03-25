@@ -1,0 +1,84 @@
+.header {
+  margin: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .banner {
+    margin-top: 40px;
+
+    .title {
+      font-size: 44px;
+      line-height: 1.26;
+      margin-bottom: 40px;
+      font-weight: 400;
+
+      .highlight {
+        color: #38CCF5
+      }
+    }
+
+    .subtitle {
+      font-size: 28px;
+      letter-spacing: 0.56px;
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 40px;
+    }
+
+    .artboardArea {
+      position: relative;
+      padding-top: 70px;
+
+      .repeat-grid {
+        width: 230px;
+        height: 165px;
+        opacity: 1;
+        left: 0;
+        top: 0;
+        position: absolute;
+        z-index: -100
+      }
+
+      .banner {
+        width: 728px;
+        height: 440px;
+      }
+    }
+  }
+
+  .form-area {
+    display: flex;
+    justify-content: center;
+
+    .repeat-grid {
+      width: 230px;
+      height: 165px;
+      opacity: 1;
+      right: 10px;
+      top: 80px;
+      position: absolute;
+      z-index: -100
+    }
+
+  }
+
+  .ellipses {
+    position: absolute;
+    top: -430px;
+    right: -470px;
+    z-index: -120;
+
+    .ellipse2 {
+      margin-bottom: 40px
+    }
+
+    .ellipse3 {
+      margin-bottom: 80px
+    }
+
+    .ellipse4 {
+      margin-bottom: 120px
+    }
+  }
+
+}
