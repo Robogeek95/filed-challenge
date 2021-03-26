@@ -23,6 +23,7 @@ import {
   MatFormFieldModule,
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
 } from '@angular/material/form-field';
+import { TrialPageComponent } from './trial-page/trial-page.component';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'outline',
@@ -38,6 +39,7 @@ const appearance: MatFormFieldDefaultOptions = {
     BenefitsComponent,
     FeedbacksComponent,
     FooterComponent,
+    TrialPageComponent,
   ],
   imports: [
     BrowserModule,
