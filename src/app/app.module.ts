@@ -12,15 +12,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { OfferComponent } from './offer/offer.component';
+import { BenefitsComponent } from './benefits/benefits.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import { FooterComponent } from './footer/footer.component';
+import { MatIconModule } from '@angular/material/icon';
 
 import {
   MatFormFieldDefaultOptions,
   MatFormFieldModule,
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
 } from '@angular/material/form-field';
-import { OfferComponent } from './offer/offer.component';
-import { BenefitsComponent } from './benefits/benefits.component';
-import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'outline',
@@ -35,6 +37,7 @@ const appearance: MatFormFieldDefaultOptions = {
     OfferComponent,
     BenefitsComponent,
     FeedbacksComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ const appearance: MatFormFieldDefaultOptions = {
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatIconModule,
   ],
   providers: [
     {
