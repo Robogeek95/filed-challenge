@@ -1,28 +1,53 @@
 .header {
   margin: 5%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: 50% 50%;
+  }
+
+  .title {
+    font-size: 44px;
+    line-height: 1.26;
+    margin-bottom: 40px;
+    font-weight: 400;
+
+    .highlight {
+      color: #38CCF5
+    }
+  }
+
+  .subtitle {
+    font-size: 28px;
+    letter-spacing: 0.56px;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 40px;
+  }
 
   .banner {
-    margin-top: 40px;
+    // Extra small devices (portrait phones, less than 576px) // No media query for `xs` since this is the default in Bootstrap
+    display: none;
 
-    .title {
-      font-size: 44px;
-      line-height: 1.26;
-      margin-bottom: 40px;
-      font-weight: 400;
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) {}
 
-      .highlight {
-        color: #38CCF5
-      }
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {}
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+      display: block;
+      margin-top: 40px;
     }
 
-    .subtitle {
-      font-size: 28px;
-      letter-spacing: 0.56px;
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 40px;
+    img.artboard {
+      width: 500px
     }
 
     .artboardArea {
@@ -47,6 +72,15 @@
   }
 
   .form-area {
+    .head-text {
+      display: block;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+
     display: flex;
     justify-content: center;
 

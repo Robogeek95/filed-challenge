@@ -2,14 +2,30 @@
   display: grid;
   align-items: center;
   padding: 5%;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+
+  }
 
   .highlighted {
     color: #38CCF5
   }
 
+  .title {
+    margin-top: 30px;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+      text-align: left;
+    }
+  }
+
   .benefits-list {
     font-size: 20px;
+    line-height: 1.5;
 
     .list {
       margin-bottom: 30px;

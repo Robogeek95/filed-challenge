@@ -4,10 +4,14 @@
   padding: 0 5%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    background-position: center;
+  }
 
   .offer-text {
     text-align: center;
