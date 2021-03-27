@@ -17,13 +17,13 @@ export class HomeComponent implements OnInit {
   addProduct(name: any, price: any) {
     this.store.dispatch({
       type: 'ADD_DETAIL',
-      payload: <Details>{
+      payload: {
         firstName: 'firstName',
         lastName: 'lastName',
         monthlyAdBudget: 0,
         phone: 0,
         email: '',
-      },
+      } as Details,
     });
   }
 

@@ -3,43 +3,27 @@
     Get Trial
   </button>
 
-  <!-- <div class="panel panel-primary">
-    <div class="panel-body">
-      <div>
-        <div class="form-group">
-          <label class="col-md-4">username</label>
-          <input type="text" class="form-control" #productName />
-        </div>
-        <div class="form-group">
-          <label class="col-md-4">Price</label>
-          <input type="text" class="form-control" #productPrice />
-        </div>
-        <div class="form-group">
-          <button
-            (click)="addProduct(productName.value, productPrice.value)"
-            class="btn btn-primary"
-          >
-            Add Detail
-          </button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <table class="table table-hover" *ngIf="details">
-    <thead>
-      <tr>
-        <td>name</td>
-        <td>password</td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of details | async">
-        <td>{{ product.email }}</td>
-        <td>{{ product.firstName }}</td>
-        <td>{{ product.lastName }}</td>
-        <td>{{ product.phone }}</td>
-        <td>{{ product.monthlyAdBudget }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div *ngIf="details">
+    <p class="mat-h1">Customer Details</p>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <td>First name</td>
+          <td>Last name</td>
+          <td>email</td>
+          <td>Monthly Advertising Budget</td>
+          <td>phone</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of details | async">
+          <td>{{ product.firstName }}</td>
+          <td>{{ product.lastName }}</td>
+          <td>{{ product.email }}</td>
+          <td>{{ product.monthlyAdBudget }}</td>
+          <td>{{ product.phone }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -17,13 +17,13 @@ export class PaymentService {
   private addProduct(details: Details) {
     this.store.dispatch({
       type: 'ADD_DETAIL',
-      payload: <Details>{
+      payload: {
         firstName: details.firstName,
         lastName: details.lastName,
         monthlyAdBudget: details.monthlyAdBudget,
         phone: details.phone,
         email: details.email,
-      },
+      } as Details,
     });
   }
 }
