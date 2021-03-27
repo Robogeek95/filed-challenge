@@ -10,6 +10,10 @@
   min-height: 324px;
   padding: 80px 30px 40px 30px;
 
+  .success-area {
+    text-align: center;
+  }
+
   .name-inputs {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -5,6 +5,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Details } from '../home/details.model';
+import { PaymentService } from '../services/payment/payment.service';
 
 @Component({
   selector: 'app-trial-form',
@@ -20,31 +23,38 @@ export class TrialFormComponent implements OnInit {
   loading = false;
   success = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private store: Store,
+    private ps: PaymentService
+  ) {
     this.myForm = this.fb.group({});
     this.step = 1;
   }
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      // password: [
-      //   '',
-      //   [
-      //     Validators.required,
-      //     Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'),
-      //   ],
-      // ],
-      // age: [
-      //   null,
-      //   [
-      //     Validators.required,
-      //     Validators.minLength(2),
-      //     Validators.min(18),
-      //     Validators.max(65),
-      //   ],
-      // ],
-
-      budget: ['', [Validators.required]],
+      firstName: [
+        '',
+        Validators.required,
+        Validators.min(3),
+        Validators.max(65),
+      ],
+      lastName: [
+        '',
+        Validators.required,
+        Validators.min(3),
+        Validators.max(65),
+      ],
+      email: [
+        '',
+        Validators.required,
+        Validators.email,
+        Validators.min(3),
+        Validators.max(65),
+      ],
+      phone: ['', Validators.required],
+      monthlyAdBudget: ['', Validators.required],
     });
   }
 
@@ -68,9 +78,9 @@ export class TrialFormComponent implements OnInit {
     this.loading = true;
 
     const formValue = this.myForm.value;
-
     console.log(formValue);
 
+    this.ps.makePayment(formValue);
     this.loading = false;
   }
 

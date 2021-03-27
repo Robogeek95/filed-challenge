@@ -1,3 +1,45 @@
-<div class="content" routerLink="/trial">
-  <button mat-raised-button color="primary">Get Trial</button>
+<div class="content">
+  <button mat-raised-button color="primary" routerLink="/trial">
+    Get Trial
+  </button>
+
+  <!-- <div class="panel panel-primary">
+    <div class="panel-body">
+      <div>
+        <div class="form-group">
+          <label class="col-md-4">username</label>
+          <input type="text" class="form-control" #productName />
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Price</label>
+          <input type="text" class="form-control" #productPrice />
+        </div>
+        <div class="form-group">
+          <button
+            (click)="addProduct(productName.value, productPrice.value)"
+            class="btn btn-primary"
+          >
+            Add Detail
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <table class="table table-hover" *ngIf="details">
+    <thead>
+      <tr>
+        <td>name</td>
+        <td>password</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of details | async">
+        <td>{{ product.email }}</td>
+        <td>{{ product.firstName }}</td>
+        <td>{{ product.lastName }}</td>
+        <td>{{ product.phone }}</td>
+        <td>{{ product.monthlyAdBudget }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

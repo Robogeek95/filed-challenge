@@ -1,5 +1,10 @@
 <div class="trial-form">
-  <form class="form-body" [formGroup]="myForm" (ngSubmit)="submitHandler()">
+  <form
+    *ngIf="!success; else successArea"
+    class="form-body"
+    [formGroup]="myForm"
+    (ngSubmit)="submitHandler()"
+  >
     <div *ngIf="step === 1; else step2Template" class="step1" #step1Template>
       <div class="form-heading">
         <p class="heading">Let's Start</p>
@@ -36,10 +41,10 @@
           <h3 class="form-label">What's your monthly ad budget?</h3>
 
           <mat-form-field class="full-width">
-            <mat-select formControlName="budget" placeholder="Select">
+            <mat-select formControlName="monthlyAdBudget" placeholder="Select">
               <mat-option>Clear</mat-option>
-              <mat-option value="valid">Valid option</mat-option>
-              <mat-option value="invalid">Invalid option</mat-option>
+              <mat-option value="valid">1</mat-option>
+              <mat-option value="invalid">2</mat-option>
             </mat-select>
             <!-- <mat-error *ngIf="selected.hasError('required')"
             >You must make a selection</mat-error
@@ -57,7 +62,6 @@
 
       <button
         aria-label="get started"
-        [disabled]="myForm.invalid"
         class="submitButton"
         mat-raised-button
         color="primary"
@@ -76,27 +80,27 @@
       <div class="name-inputs">
         <mat-form-field class="example-full-width">
           <mat-label>First Name*</mat-label>
-          <input matInput />
+          <input matInput formControlName="firstName" />
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <mat-label>Last Name*</mat-label>
-          <input matInput />
+          <input matInput formControlName="lastName" />
         </mat-form-field>
       </div>
 
       <mat-form-field>
         <mat-label>Work Email</mat-label>
-        <input matInput placeholder="Input placeholder" />
+        <input matInput formControlName="email" />
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Monthly Advertising Budget *</mat-label>
-        <input matInput placeholder="Input placeholder" />
+        <input matInput formControlName="monthlyAdBudget" type="number" />
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Phone</mat-label>
-        <input matInput placeholder="Input placeholder" />
+        <input matInput formControlName="phone" type="number" />
       </mat-form-field>
 
       <button
@@ -109,7 +113,10 @@
         Get Started
       </button>
     </ng-template>
-
-    <div *ngIf="success">Yay! We received your submission</div>
   </form>
+
+  <ng-template #successArea>
+    <p class="mat-h1 success-area">Yay! We received your submission</p>
+    <p class="title success-area">We would contact you on the next steps</p>
+  </ng-template>
 </div>
